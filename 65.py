@@ -18,12 +18,23 @@ class Unit5:
         def AreaOfRectangle(self):
             print(f"Area of Rectangle: {self.length * self.breadth} {self.unit}^2")
 
-num=int(input("Enter number of rectangles: "))
+    class Test:
+        def __init__(self,a,b):
+            self.a=a
+            self.b=b
+            self.power=(self.a**self.b)
+        def put(self):
+            print(f"Power: {self.power}")
+
+"""num=int(input("Enter number of rectangles: "))
 
 for i in range(num):
     x=float(input("Enter Length: "))
     y=float(input("Enter Breadth: "))
     z=input("Enter units: ")
     obj=Unit5.rectangle(x,y,z)
-    obj.AreaOfRectangle()
+    obj.AreaOfRectangle()"""
+
+obj=Unit5.Test(2,3)
+obj.put()
             
