@@ -26,15 +26,64 @@ class Unit5:
         def put(self):
             print(f"Power: {self.power}")
 
-"""num=int(input("Enter number of rectangles: "))
 
-for i in range(num):
-    x=float(input("Enter Length: "))
-    y=float(input("Enter Breadth: "))
-    z=input("Enter units: ")
-    obj=Unit5.rectangle(x,y,z)
-    obj.AreaOfRectangle()"""
+    class Company:
+        def __init__ (self,name,cc,price):
+            self.name=name
+            self.cc=cc
+            self.price=price
+        def displayCompanywithhighestcc(self):
+            print(f"Name: {self.name}")
+            print(f"CC: {self.cc}")
+            print(f"Price: {self.price}")
 
-obj=Unit5.Test(2,3)
-obj.put()
-            
+    class Employee:
+        def __init__ (self,name,salary):
+            self.name=name
+            self.salary=salary
+        def display(self):
+            print(f"Name: {self.name}")
+            print(f"Salary: ${self.salary}")
+
+    class Volume:
+        def __init__ (self,radius,height):
+            self.radius=radius
+            self.height=height
+
+        def volumeCylinder(self):
+            print(f"Volume of Cylinder: {3.14 * self.radius * self.radius * self.height}")
+        
+        def volumeSphere(self):
+            print(f"Volume of Sphere: {(4/3) * 3.14 * self.radius * self.radius * self.radius}")
+
+        def volumeCone(self):
+            print(f"Volume of Cone: {(1/3) * 3.14 * self.radius * self.radius * self.height}")
+
+    class ParentClass:
+        def __init__ (self,name,age):
+            self.name=name
+            self.age=age
+        def display(self):
+            print(f"Name: {self.name}")
+            print(f"Age: {self.age}")
+
+    class ChildClass(ParentClass):
+        def __init__ (self,name,age,rollno):
+            super().__init__(name,age)
+            self.rollno=rollno
+        def display(self):
+            super().display()
+            print(f"RollNo: {self.rollno}")
+
+    class volume_parent:
+        def __init__ (self,radius):
+            self.radius=radius
+    class volume_child(volume_parent):
+        def volumeSphere(self):
+            print(f"Volume of Sphere: {(4/3) * 3.14 * self.radius * self.radius * self.radius}")
+
+
+obj=Unit5.volume_child(5)
+obj.volumeSphere()
+
+
