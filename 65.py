@@ -112,9 +112,104 @@ class Unit5:
             self.model=model
         def getCarModel(self):
             print(f"Car Model: {self.model}")
+
+    class P:
+        def getEven(self,L):
+            self.L=L
+            self.E=[]
+            for x in self.L:
+                if int(x)%2==0:
+                    self.E.append(x)
+            return self.E
+    
+    class C(P):
+        def getOdd(self):
+            self.O=[]
+            for x in self.L:
+                if int(x)%2!=0:
+                    self.O.append(x)
+            return self.O
+    
+    class G(C):
+        def getSorted(self):
+            self.L.sort()
+            return self.L
         
-mycar = Unit5.Honda()
-mycar.setEngineModel("4.5L V8")
-mycar.setCarModel("NSX")
-mycar.getEngineModel()
-mycar.getCarModel()
+    class Polygon:
+        def __init__(self):
+            self.sideNo=0
+            self.choice=0
+        
+        def getChoice(self):
+            print("1. Rectangle\n2. Pentagon")
+            self.choice=int(input("Enter your choice: "))
+            if self.choice==1:
+                self.sideNo=4
+                return Unit5.Rectangle()  
+            elif self.choice==2:
+                self.sideNo=5
+                return Unit5.Penagon()
+            else:
+                print("Invalid choice")
+                return None
+
+    class Rectangle(Polygon):
+        def __init__(self):
+            super().__init__()
+            self.sideNo=4
+            self.sides=[]
+        def inputSides(self):
+            for i in range(self.sideNo):
+                x=int(input(f"Enter side {i+1}: "))
+                self.sides.append(x)
+        
+        def displaySides(self):
+            for i in range(self.sideNo):
+                print(f"Side {i+1}: {self.sides[i]}")
+    
+    class Penagon(Polygon):
+        def __init__(self):
+            super().__init__()
+            self.sideNo=5
+            self.sides=[]
+        def inputSides(self):
+            for i in range(self.sideNo):
+                x=int(input(f"Enter side {i+1}: "))
+                self.sides.append(x)
+        
+        def displaySides(self):
+            for i in range(self.sideNo):
+                print(f"Side {i+1}: {self.sides[i]}")
+
+"""class Vehicle:
+    def __init__(self, name, price, regno):
+        self.name = name
+        self.price = price
+        self.regno = regno
+
+class Car(Vehicle):
+    def __init__(self, name, price, regno, gear):
+        super().__init__(name, price, regno)
+        self.gear = gear
+
+class Boat(Vehicle):
+    def __init__(self, name, price, regno, capacity):
+        super().__init__(name, price, regno)
+        self.capacity = capacity
+
+class Hover(Car, Boat):
+    def __init__(self, name, price, regno, gear, capacity):
+        Car.__init__(self, name, price, regno, gear)
+        Boat.__init__(self, name, price, regno, capacity)
+
+obj = Car("Ferrari", 3500000, "AP 12 3456", 9)
+obj2 = Boat("Lamborghini", 550000, "HR 12 U 7965", 12)
+obj3 = Hover("Mercedes", 250000, "BATMAN77", 8, 12)
+print(obj3.name, obj3.price, obj3.regno, obj3.gear, obj3.capacity)"""
+
+
+obj=Unit5.Polygon()
+choice1=obj.getChoice()
+if choice1:
+    choice1.inputSides()
+    choice1.displaySides()
