@@ -83,7 +83,38 @@ class Unit5:
             print(f"Volume of Sphere: {(4/3) * 3.14 * self.radius * self.radius * self.radius}")
 
 
-obj=Unit5.volume_child(5)
-obj.volumeSphere()
+    class A:
+        def get_a(self):
+            self.a=int(input("Enter a: "))
 
+    class B(A):
+        def get_b(self):
+            self.b=int(input("Enter b: "))
+        
+    class C(B):
+        def get_c(self):
+            self.c=int(input("Enter c: "))
+    
+        def put(self):
+            print(f"a: {self.a}")
+            print(f"b: {self.b}")
+            print(f"c: {self.c}")
 
+               
+    class Car:
+        def setEngineModel(self,engine):
+            self.engine=engine
+        def getEngineModel(self):
+            print(f"Engine Model: {self.engine}")
+        
+    class Honda(Car):
+        def setCarModel(self,model):
+            self.model=model
+        def getCarModel(self):
+            print(f"Car Model: {self.model}")
+        
+mycar = Unit5.Honda()
+mycar.setEngineModel("4.5L V8")
+mycar.setCarModel("NSX")
+mycar.getEngineModel()
+mycar.getCarModel()
