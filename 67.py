@@ -4,7 +4,7 @@ for i in range(1,num+1):
     line=input("Enter line: ")
     file.write(str(i)+". "+line+"\n")
 file.close()
-c1=int(input("Enter 1 to read the file,2 to delete the contents, 3 to seek and 4 to count number of characters:"))
+c1=int(input("Enter 1 to read the file,2 to delete the contents, 3 to seek, 4 to count number of characters, 5 for number of words, 6 for number of vowels: "))
 if c1==1:
     file=open("D:\\College\\INT108\\Tests\\textfile.txt","r")
     print(file.read())
@@ -26,3 +26,22 @@ elif c1==4:
         for char in line:
             count+=1
     print("Number of characters in the file: ",count)
+    file.close()
+elif c1==5:
+    count=0
+    file=open("D:\\College\\INT108\\Tests\\textfile.txt","r")
+    for line in file:
+        for word in line.split():
+            count+=1
+    print("Number of words in the file: ",count-1)
+    file.close()
+elif c1==6:
+    count=0
+    vowels="aeiouAEIOU"
+    file=open("D:\\College\\INT108\\Tests\\textfile.txt","r")
+    for line in file:
+        for char in line:
+            if char in vowels:
+                count+=1
+    print("Number of vowels in the file: ",count)
+    file.close()
