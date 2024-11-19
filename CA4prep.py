@@ -1,4 +1,4 @@
-"""class Student:
+class Student:
     class_year=2024
     num_students=0
     students=[]
@@ -15,10 +15,9 @@ obj3=Student("Bhoomi",17)
 print(f"My class of {Student.class_year} has {Student.num_students} students")
 
 for i,student in enumerate(Student.students):
-    print(f"{i+1}. {student.name} is {student.age} years old")"""
+    print(f"{i+1}. {student.name} is {student.age} years old")
 
-
-"""class Animal:
+class Animal:
     def __init__(self,name):
         self.name=name
         self.isalive=True
@@ -50,9 +49,9 @@ print(dog.isalive)
 dog.eat()
 dog.sleep()
 dog.speak()
-cat.speak()"""
+cat.speak()
 
-"""class Animal:
+class Animal:
     def __init__(self,name):
         self.name=name
     def eat(self):
@@ -89,9 +88,9 @@ hawk.eat()
 fish.eat()
 fish.sleep()
 hawk.sleep()
-rabbit.sleep()"""
+rabbit.sleep()
 
-"""from abc import ABC, abstractclassmethod
+from abc import ABC, abstractclassmethod
 
 class Vehicle(ABC):
     @abstractclassmethod
@@ -120,10 +119,10 @@ car.go()
 car.stop()
 bycycle=Bicycle()
 bycycle.go()
-bycycle.stop()"""
+bycycle.stop()
 
 
-"""class Shape:
+class Shape:
     def __init__(self,color,filled):
         self.color=color
         self.filled=filled
@@ -147,10 +146,9 @@ triangle=Triangle("Pink",True,width=10,length=15)
 print(triangle.width)
 print(triangle.color)
 print(triangle.filled)
-print(triangle.length)"""
+print(triangle.length)
 
-
-"""class Animal:
+class Animal:
     alive = True
 
 class Dog(Animal):
@@ -170,10 +168,8 @@ animals = [Dog(), Cat(),Car()]
 
 for animal in animals:
     animal.speak()
-    print(animal.alive)"""
 
-
-"""class Library:
+class Library:
     def __init__(self,name):
         self.name=name
         self.books=[]
@@ -199,8 +195,7 @@ library.addBook(book2)
 
 print(library.name)
 for book in library.listBooks():
-    print(book)"""
-
+    print(book)
 
 class Engine:
     def __init__ (self,horsepower):
@@ -225,3 +220,55 @@ car = Car("Ford","Mustang",250,20)
 car2 = Car("Dodge", "Challenger", 1000, 22)
 print(car.display())
 print(car2.display())
+
+class Test:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+        self.power=(self.a**self.b) 
+
+    def display(self):  
+        print(self.power)
+class Circle:
+    def __init__ (self,radius):
+        self.radius=radius
+    def area(self):
+        return f"Area of Circle: {(3.14 * self.radius**2):.2f} cm²"
+    
+    def perimeter(self):
+        return f"Perimeter of Circle: {(2 * 3.14 * self.radius):.2f} cm"
+    
+
+obj=Circle(5)
+print(obj.area())
+print(obj.perimeter())
+
+
+import datetime
+class Person:
+    def __init__ (self,name,country,DOB):
+        self.name=name
+        self.country=country
+        self.DOB=DOB
+        self.Bday=False
+    def age(self):
+        today=datetime.date.today()
+        year=today.year-self.DOB.year
+
+        if (today.month,today.day)<(self.DOB.month,self.DOB.day):
+            year-=1
+        elif (today.month,today.day)==(self.DOB.month,self.DOB.day):
+            self.Bday=True
+        return year
+
+    
+    def display(self):
+        age=self.age()
+        if self.Bday:
+            print(f"Congratulations {self.name} from {self.country} on your {age}th birthday!")
+        else:
+            print(f"{self.name} from {self.country} is {self.age()} years old")
+
+person1=Person("Faayim","India",datetime.date(2006,11,24))
+person1.display()
+
